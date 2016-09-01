@@ -12,7 +12,7 @@ class TestMafiaGame(unittest.TestCase):
         self.test_name = 'testname'
         self.game = Game(self.test_name)
 
-    def test_new_game_name_correctyly_set(self):
+    def test_new_game_name_correctly_set(self):
         self.assertEqual(self.game.name, self.test_name)
 
     def test_game_name_changed(self):
