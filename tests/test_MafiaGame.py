@@ -22,6 +22,9 @@ class TestMafiaGame(unittest.TestCase):
 
         self.assertEqual(self.game.name, changed_name)
 
+    def test_start_players_empty(self):
+        self.assertEqual(len(self.game.players), 0)
+
 
 if __name__ == '__main__':
     unittest.main()
