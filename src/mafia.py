@@ -9,3 +9,6 @@ class Game:
 
     def set_name(self, new_name):
         self.name = new_name
+
+    def set_players(self, players):
+        self.players = players

@@ -25,6 +25,14 @@ class TestMafiaGame(unittest.TestCase):
     def test_start_players_empty(self):
         self.assertEqual(len(self.game.players), 0)
 
+    def test_set_start_players(self):
+        self.test_players_list = ['Aa Aa', 'Bb', 'Cc Cc']
+
+        self.game.set_players(self.test_players_list)
+
+        self.assertEqual(len(self.game.players), 3)
+        self.assertListEqual(self.game.players, self.test_players_list)
+
 
 if __name__ == '__main__':
     unittest.main()
