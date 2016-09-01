@@ -10,6 +10,8 @@ class TestMafiaGame(unittest.TestCase):
 
     def setUp(self):
         self.test_name = 'testname'
+        self.test_players_list = ['Aa Aa', 'Bb', 'Cc Cc']
+
         self.game = Game(self.test_name)
 
     def test_new_game_name_correctly_set(self):
@@ -26,15 +28,12 @@ class TestMafiaGame(unittest.TestCase):
         self.assertEqual(len(self.game.players), 0)
 
     def test_set_start_players(self):
-        self.test_players_list = ['Aa Aa', 'Bb', 'Cc Cc']
-
         self.game.set_players(self.test_players_list)
 
         self.assertEqual(len(self.game.players), 3)
         self.assertListEqual(self.game.players, self.test_players_list)
 
     def test_start_game(self):
-        self.test_players_list = ['Aa Aa', 'Bb', 'Cc Cc']
         self.game.set_players(self.test_players_list)
 
         self.game.start_game()
