@@ -30,7 +30,6 @@ class TestMafiaGame(unittest.TestCase):
     def test_set_start_players(self):
         self.game.set_players(self.test_players_list)
 
-        self.assertEqual(len(self.game.players), 3)
         self.assertListEqual(self.game.players, self.test_players_list)
 
     def test_start_game(self):
