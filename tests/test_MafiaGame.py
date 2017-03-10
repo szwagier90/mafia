@@ -17,6 +17,8 @@ class TestMafiaGame(unittest.TestCase):
             players=["Player1", "Player2"],
         )
 
+        self.assertFalse(game.active)
+
         game.new_game(shuffle=random_mock.shuffle)
         random_mock.shuffle.assert_called_once()
 
