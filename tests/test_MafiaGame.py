@@ -14,7 +14,10 @@ class TestMafiaGame(unittest.TestCase):
 
         game = Game(
             name="NewGame",
-            players=["Player1", "Player2"],
+            players=[
+                "Player1",
+                "Player2",
+            ],
         )
 
         self.assertFalse(game.active)
