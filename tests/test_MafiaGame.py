@@ -21,6 +21,7 @@ class TestMafiaGame(unittest.TestCase):
 
         game.new_game(shuffle=random_mock.shuffle)
         random_mock.shuffle.assert_called_once()
+        self.assertTrue(game.active)
 
 if __name__ == '__main__':
     unittest.main()

@@ -11,3 +11,4 @@ class Game:
 
     def new_game(self, shuffle=random.shuffle):
         shuffle(self.players)
+        self.active = True
