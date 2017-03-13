@@ -4,6 +4,7 @@
 import unittest
 
 from src.mafia import Game
+from src.player import Player
 
 from mock import Mock, MagicMock
 
@@ -12,11 +13,20 @@ class TestMafiaGame(unittest.TestCase):
         random_mock = Mock()
         random_mock.shuffle = MagicMock()
 
+        player1mock = Mock(
+            name="Player1",
+            spec=Player,
+        )
+        player2mock = Mock(
+            name="Player2",
+            spec=Player,
+        )
+
         game = Game(
             name="NewGame",
             players=[
-                "Player1",
-                "Player2",
+                player1mock,
+                player2mock,
             ],
         )
 
