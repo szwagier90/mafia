@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from src.io_wrapper import IOWrapper
+
 class TerminalGame():
-    pass
+    def __init__(self, io=IOWrapper):
+        self.input = io.input
+        self.output = io.output
