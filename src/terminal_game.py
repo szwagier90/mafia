@@ -7,3 +7,5 @@ class TerminalGame():
     def __init__(self, io=IOWrapper):
         self.input = io.input
         self.output = io.output
+
+        game_name = self.input("Enter game name: ")
