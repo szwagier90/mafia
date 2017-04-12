@@ -21,12 +21,17 @@ class TestMafiaGame(unittest.TestCase):
             name="Player2",
             spec=Player,
         )
+        player3mock = Mock(
+            name="Player3",
+            spec=Player,
+        )
 
         game = Game(
             name="NewGame",
             players=[
                 player1mock,
                 player2mock,
+                player3mock,
             ],
         )
 
@@ -37,7 +42,8 @@ class TestMafiaGame(unittest.TestCase):
         self.assertTrue(game.active)
 
         self.assertEqual(game.get_player_to_kill(player1mock), player2mock)
-        self.assertEqual(game.get_player_to_kill(player2mock), player1mock)
+        self.assertEqual(game.get_player_to_kill(player2mock), player3mock)
+        self.assertEqual(game.get_player_to_kill(player3mock), player1mock)
 
 if __name__ == '__main__':
     unittest.main()
