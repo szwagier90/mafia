@@ -6,6 +6,9 @@ import unittest
 from mock import Mock
 
 from src.terminal_game import TerminalGame
+from src.io_wrapper import IOWrapper
+
+from src.exceptions import *
 
 from src.io_wrapper import IOWrapper
 
@@ -16,10 +19,11 @@ class TestTerminalGame(unittest.TestCase):
             spec=IOWrapper,
         )
 
-        io_mock.input.side_effect = [""]
+        io_mock.input.side_effect = ["", 0]
         game = TerminalGame(io=io_mock)
-        io_mock.input.assert_called_once_with("Enter game name: ")
-
+        io_mock.input.assert_called()
+        self.assertEquals(io_mock.input.call_count, 2)
+        
 
 if __name__ == '__main__':
     unittest.main()

@@ -9,3 +9,4 @@ class TerminalGame():
         self.output = io.output
 
         game_name = self.input("Enter game name: ")
+        number_of_players = self.input("Number of players: ")
