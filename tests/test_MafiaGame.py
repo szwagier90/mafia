@@ -6,9 +6,16 @@ import unittest
 from src.mafia import Game
 from src.player import Player
 
+from src.exceptions import *
+
 from mock import Mock, MagicMock
 
 class TestMafiaGame(unittest.TestCase):
+    def test_raise_exception_if_empty_players_list(self):
+        players = []
+        with self.assertRaises(NotEnoughPlayersError):
+            game = Game("", players)
+
     def test_new_game(self):
         random_mock = Mock()
         random_mock.shuffle = MagicMock()

@@ -1,12 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from src.exceptions import *
+
 import random
 
 class Game:
     def __init__(self, name, players, active=False):
         self.name = name
-        self.players = players
+
+        if len(players) > 2:
+            self.players = players
+        else:
+            raise NotEnoughPlayersError
+
         self.active = active
 
     def new_game(self, shuffle=random.shuffle):
